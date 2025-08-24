@@ -52,22 +52,13 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 pt-4">
+    <header className="sticky top-0 z-[9999] pt-4 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Top Banner */}
-        <div className="text-center mb-4">
-          <div className="inline-flex items-center gap-2 bg-gray-100 px-4 py-2 rounded-full text-sm text-gray-600">
-            {/* <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span> */}
-            {/* Now live in 15 cities across India */}
-          </div>
-        </div>
-
         {/* Main Navigation Bar */}
         <div className="bg-white rounded-full shadow-lg border border-gray-100 px-6 py-3">
-          <div className="flex justify-between items-center">
+          <div className="flex items-center justify-between">
             {/* Logo and Brand */}
-            <div className="flex items-center space-x-3">
-              {/* Logo Icon */}
+            <div className="flex items-center">
               <Link href="/" className="cursor-pointer">
                 <Image
                   src="/BestAround V2 - Primary Logo.png"
@@ -80,14 +71,8 @@ export default function Header() {
               </Link>
             </div>
 
-            {/* Desktop Navigation Links */}
-            <nav className="hidden md:flex items-center space-x-8">
-              <button
-                onClick={() => handleNavigation('#hero')}
-                className="text-orange-500 font-medium transition-colors hover:text-orange-600 cursor-pointer"
-              >
-                Home
-              </button>
+            {/* Desktop Navigation Links - Centered */}
+            <nav className="hidden md:flex items-center space-x-12 absolute left-1/2 transform -translate-x-1/2">
               <button
                 onClick={() => handleNavigation('#how-it-works')}
                 className="text-gray-700 font-medium transition-colors hover:text-orange-500 cursor-pointer"
@@ -108,12 +93,15 @@ export default function Header() {
               </Link>
             </nav>
 
-            {/* Get App Button */}
-            <div className="hidden md:block">
-                 <a href="https://play.google.com/apps/internaltest/4700844382073723217" target="_blank" rel="noopener noreferrer" className="inline-block bg-gradient-to-r from-orange-500 to-pink-500 text-white px-8 py-3 rounded-full font-medium hover:shadow-lg transition-all duration-300 transform hover:scale-105 min-w-[120px] text-center">
-                   Get App
-                 </a>
-               </div>
+            {/* Get App Buttons */}
+            <div className="hidden md:flex items-center space-x-3">
+              <a href="#" target="_blank" rel="noopener noreferrer" className="inline-block bg-gradient-to-r from-orange-500 to-pink-500 text-white px-4 py-2 rounded-full font-medium hover:shadow-lg transition-all duration-300 transform hover:scale-105 text-sm text-center">
+                Google Play
+              </a>
+              <a href="#" target="_blank" rel="noopener noreferrer" className="inline-block bg-gradient-to-r from-orange-500 to-pink-500 text-white px-4 py-2 rounded-full font-medium hover:shadow-lg transition-all duration-300 transform hover:scale-105 text-sm text-center">
+                App Store
+              </a>
+            </div>
 
             {/* Mobile menu button */}
             <div className="md:hidden">
@@ -129,20 +117,14 @@ export default function Header() {
 
           {/* Mobile Navigation */}
           {isMenuOpen && (
-            <div className="md:hidden mt-4 pt-4 border-t border-gray-200">
-              <nav className="flex flex-col space-y-3">
-                <button
-                  onClick={() => handleNavigation('#hero')}
-                  className="text-orange-500 font-medium px-4 py-2 rounded-lg text-left"
-                >
-                  Home
-                </button>
-                <button
-                  onClick={() => handleNavigation('#how-it-works')}
-                  className="text-gray-700 font-medium px-4 py-2 rounded-lg hover:bg-gray-50 text-left"
-                >
-                  How it Works
-                </button>
+                          <div className="md:hidden mt-4 pt-4 border-t border-gray-200">
+                <nav className="flex flex-col space-y-3">
+                  <button
+                    onClick={() => handleNavigation('#how-it-works')}
+                    className="text-gray-700 font-medium px-4 py-2 rounded-lg hover:bg-gray-50 text-left"
+                  >
+                    How it Works
+                  </button>
                 <button
                   onClick={() => handleNavigation('#services')}
                   className="text-gray-700 font-medium px-4 py-2 rounded-lg hover:bg-gray-50 text-left"
@@ -156,10 +138,13 @@ export default function Header() {
                 >
                   Support
                 </Link>
-                                 <div className="pt-2">
-                   <a href="https://play.google.com/apps/internaltest/4700844382073723217" target="_blank" rel="noopener noreferrer" className="block w-full bg-gradient-to-r from-orange-500 to-pink-500 text-white px-6 py-3 rounded-full font-medium text-center">
-                     Get App
-                   </a>
+                                 <div className="pt-2 space-y-2">
+                                                           <a href="#" target="_blank" rel="noopener noreferrer" className="block w-full bg-gradient-to-r from-orange-500 to-pink-500 text-white px-6 py-3 rounded-full font-medium text-center">
+                      Google Play
+                    </a>
+                    <a href="#" target="_blank" rel="noopener noreferrer" className="block w-full bg-gradient-to-r from-orange-500 to-pink-500 text-white px-6 py-3 rounded-full font-medium text-center">
+                      App Store
+                    </a>
                  </div>
               </nav>
             </div>

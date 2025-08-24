@@ -164,21 +164,18 @@ export default function Home() {
 
   const testimonials = [
     {
-      name: "Sarah Johnson",
-      location: "New York, NY",
+      location: "Mumbai, India",
       text: "Best Around helped me find the perfect Italian restaurant for my anniversary dinner. The pasta was incredible and the ambiance was exactly what we wanted!",
       rating: 5
     },
     {
-      name: "Mike Chen",
-      location: "Los Angeles, CA", 
+      location: "Delhi, India", 
       text: "I discovered my new favorite taco truck through Best Around! The location-based recommendations are spot-on and saved me from another boring lunch.",
       rating: 5
     },
     {
-      name: "Emily Rodriguez",
-      location: "Chicago, IL",
-      text: "As a foodie who just moved to Chicago, Best Around made it so easy to explore the local food scene. I've found amazing hidden gems I never would have discovered otherwise!",
+      location: "Bangalore, India",
+      text: "As a foodie who just moved to Bangalore, Best Around made it so easy to explore the local food scene. I've found amazing hidden gems I never would have discovered otherwise!",
       rating: 5
     }
   ];
@@ -193,7 +190,7 @@ export default function Home() {
       </section>
 
       {/* How It Works Section */}
-      <section id="how-it-works" className="pt-2 pb-12 sm:pt-4 sm:pb-16 lg:pt-3 lg:pb-20 bg-gray-50">
+      <section id="how-it-works" className="pt-0 pb-12 sm:pt-2 sm:pb-16 lg:pt-1 lg:pb-20 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div 
             ref={howItWorksRef.elementRef}
@@ -347,7 +344,6 @@ export default function Home() {
                   <span className="text-4xl text-primary-200 absolute -bottom-6 -right-2 group-hover:text-primary-300 transition-colors duration-300">&rdquo;</span>
                 </p>
                 <div className="relative z-10">
-                  <div className="font-semibold text-gray-900 text-sm sm:text-base group-hover:text-primary-600 transition-colors duration-300">{testimonial.name}</div>
                   <div className="text-gray-600 text-xs sm:text-sm group-hover:text-primary-500 transition-colors duration-300 flex items-center">
                     <MapPin className="h-3 w-3 mr-1 opacity-60" />
                     {testimonial.location}
