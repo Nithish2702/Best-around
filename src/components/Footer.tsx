@@ -21,7 +21,7 @@ export default function Footer() {
   // Removed businessLinks array
 
   const legalLinks = [
-    { title: "Privacy Policy", href: "/privacy" },
+    { title: "Privacy Policy", href: "/privacy-policy" },
     { title: "Terms and Conditions", href: "/terms" }
   ];
 
