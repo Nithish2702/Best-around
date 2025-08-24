@@ -170,7 +170,7 @@ export default function Support() {
     }
     
     return filtered;
-  }, [faqSearchQuery, selectedFaqCategory]);
+  }, [faqSearchQuery, selectedFaqCategory, faqs]);
 
 
 
@@ -460,7 +460,7 @@ export default function Support() {
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">No questions found</h3>
                 <p className="text-gray-600 mb-6">
-                  We couldn't find any questions matching your search criteria.
+                  We couldn&apos;t find any questions matching your search criteria.
                 </p>
                 <button
                   onClick={() => {

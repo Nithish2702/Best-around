@@ -77,7 +77,7 @@ export default function About() {
               About Best Around
             </h1>
             <p className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed max-w-4xl mx-auto">
-              We're on a mission to help you discover the best local businesses and services in your area, 
+              We&apos;re on a mission to help you discover the best local businesses and services in your area, 
               making it easier than ever to find exactly what you need, when you need it.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -115,7 +115,7 @@ export default function About() {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Story</h2>
             <p className="text-lg text-gray-700 leading-relaxed">
-              Best Around was born from a simple frustration: finding reliable local services shouldn't be so difficult.
+              Best Around was born from a simple frustration: finding reliable local services shouldn&apos;t be so difficult.
             </p>
           </div>
           
@@ -172,7 +172,7 @@ export default function About() {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">Meet Our Team</h2>
             <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-              We're a passionate team of entrepreneurs, engineers, and community builders working together 
+              We&apos;re a passionate team of entrepreneurs, engineers, and community builders working together 
               to revolutionize how people discover local services.
             </p>
           </div>
@@ -214,7 +214,7 @@ export default function About() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-gray-900 mb-6">Ready to Get Started?</h2>
           <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
-            Whether you're looking for services or want to grow your business, 
+            Whether you&apos;re looking for services or want to grow your business, 
             Best Around is here to help you succeed.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
