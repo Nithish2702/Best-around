@@ -3,7 +3,7 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import FoodSuggestionHero from '@/components/FoodSuggestionHero';
-import { Search, MapPin, Star, Users, Clock, Award, ArrowRight, CheckCircle, Utensils, Coffee, Pizza, IceCream, ChevronLeft, ChevronRight, Heart, Shield, Zap, Download } from 'lucide-react';
+import { Search, MapPin, Star, Users, Clock, Award, ArrowRight, CheckCircle, Utensils, Coffee, Pizza, IceCream, ChevronLeft, ChevronRight, Heart, Shield, Zap, Download, Smartphone, Settings, Compass, MessageSquare } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { useScrollAnimation } from '@/lib/useScrollAnimation';
 
@@ -232,8 +232,8 @@ export default function Home() {
             {/* Step 1: Download & Sign Up */}
             <div className="text-center group transform transition-transform duration-500 hover:scale-105">
               <div className="relative mb-8">
-                <div className="w-20 h-20 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                  <span className="text-2xl font-bold text-white">1</span>
+                <div className="w-20 h-20 bg-primary-50 rounded-full flex items-center justify-center mx-auto group-hover:bg-primary-100 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                  <span className="text-2xl font-bold text-primary-600">1</span>
                 </div>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-4">Download & Sign Up</h3>
@@ -245,8 +245,8 @@ export default function Home() {
             {/* Step 2: Set Your Preferences */}
             <div className="text-center group transform transition-transform duration-500 hover:scale-105">
               <div className="relative mb-8">
-                <div className="w-20 h-20 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                  <span className="text-2xl font-bold text-white">2</span>
+                <div className="w-20 h-20 bg-primary-50 rounded-full flex items-center justify-center mx-auto group-hover:bg-primary-100 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                  <span className="text-2xl font-bold text-primary-600">2</span>
                 </div>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-4">Set Your Preferences</h3>
@@ -258,8 +258,8 @@ export default function Home() {
             {/* Step 3: Discover Dishes */}
             <div className="text-center group transform transition-transform duration-500 hover:scale-105">
               <div className="relative mb-8">
-                <div className="w-20 h-20 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                  <span className="text-2xl font-bold text-white">3</span>
+                <div className="w-20 h-20 bg-primary-50 rounded-full flex items-center justify-center mx-auto group-hover:bg-primary-100 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                  <span className="text-2xl font-bold text-primary-600">3</span>
                 </div>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-4">Discover Dishes</h3>
@@ -271,8 +271,8 @@ export default function Home() {
             {/* Step 4: Enjoy & Review */}
             <div className="text-center group transform transition-transform duration-500 hover:scale-105">
               <div className="relative mb-8">
-                <div className="w-20 h-20 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                  <span className="text-2xl font-bold text-white">4</span>
+                <div className="w-20 h-20 bg-primary-50 rounded-full flex items-center justify-center mx-auto group-hover:bg-primary-100 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                  <span className="text-2xl font-bold text-primary-600">4</span>
                 </div>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-4">Enjoy & Review</h3>
