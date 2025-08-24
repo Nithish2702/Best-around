@@ -95,7 +95,7 @@ export default function Footer() {
               Quick Links
               <div className="absolute -bottom-2 left-0 w-10 h-0.5 bg-gradient-to-r from-primary-500 to-primary-700 rounded-full"></div>
             </h4>
-            <ul className="space-y-3">
+            <ul className="space-y-3 -ml-5">
               {quickLinks.map((link, index) => (
                 <li key={index}>
                   <a 
@@ -133,7 +133,7 @@ export default function Footer() {
               Legal
               <div className="absolute -bottom-2 left-0 w-10 h-0.5 bg-gradient-to-r from-primary-500 to-primary-700 rounded-full"></div>
             </h4>
-            <ul className="space-y-3">
+            <ul className="space-y-3 -ml-5">
               {legalLinks.map((link, index) => (
                 <li key={index}>
                   <a 
