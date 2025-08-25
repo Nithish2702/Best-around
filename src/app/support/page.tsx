@@ -427,7 +427,7 @@ export default function Support() {
                 <Mail className="h-10 w-10" />
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-3">Email Support</h3>
-              <p className="text-lg text-gray-600 mb-4 leading-relaxed">Send us an email and we'll get back to you promptly</p>
+              <p className="text-lg text-gray-600 mb-4 leading-relaxed">Send us an email and we&apos;ll get back to you promptly</p>
               <div className="font-bold text-primary-600 mb-3 text-lg">{contactMethods[0].contact}</div>
             </motion.div>
           </motion.div>

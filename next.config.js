@@ -2,6 +2,7 @@
 const nextConfig = {
   // App directory is now stable in Next.js 14
   trailingSlash: true,
+  output: 'export',
   images: {
     domains: [
       'images.unsplash.com'
