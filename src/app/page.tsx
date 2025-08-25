@@ -164,9 +164,9 @@ export default function Home() {
 
   const testimonials = [
     {
-      name: "Priya Sharma",
+      name: "Siva Thangaraj",
       photo: "https://i.pravatar.cc/150?img=1",
-      location: "Mumbai, India",
+      location: "Chennai, India",
       text: "Found the best butter chicken near my office! The gravy is so rich and creamy, just like my mom makes. BestAround really knows what's good!",
       rating: 5
     },
@@ -205,35 +205,11 @@ export default function Home() {
             className={`text-center mb-16 sm:mb-20 scroll-animate ${howItWorksRef.isVisible ? 'animate' : ''}`}
           >
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              How Best Around Works
+              How BestAround Works
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Discover amazing dishes in just a few simple steps
             </p>
-          </div>
-
-          {/* Video Demo Section */}
-          <div className="mb-16 sm:mb-20">
-            <div className={`max-w-4xl mx-auto scroll-animate-scale ${howItWorksRef.isVisible ? 'animate' : ''}`}>
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-gray-900">
-                <video 
-                  className="w-full h-auto"
-                  controls
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  poster="/BestAround V2 - Primary Logo.png"
-                >
-                  <source src="/video.mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
-              </div>
-              <p className="text-center text-gray-600 mt-4 text-sm">
-                Watch how easy it is to find your next favorite dish with Best Around
-              </p>
-            </div>
           </div>
 
           <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 scroll-animate-stagger ${howItWorksRef.isVisible ? 'animate' : ''}`}>
@@ -246,7 +222,7 @@ export default function Home() {
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-4">Download & Sign Up</h3>
               <p className="text-gray-600 leading-relaxed">
-                Get the free Best Around app from your app store and create your foodie profile in seconds
+                Get the free BestAround app from your app store and create your foodie profile in seconds
               </p>
             </div>
 
@@ -289,6 +265,30 @@ export default function Home() {
               </p>
             </div>
           </div>
+
+          {/* Video Demo Section */}
+          <div className="mt-16 sm:mt-20">
+            <div className={`max-w-4xl mx-auto scroll-animate-scale ${howItWorksRef.isVisible ? 'animate' : ''}`}>
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-gray-900">
+                <video 
+                  className="w-full h-auto"
+                  controls
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  poster="/BestAround V2 - Primary Logo.png"
+                >
+                  <source src="/video.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
+              </div>
+              <p className="text-center text-gray-600 mt-4 text-sm">
+                Watch how easy it is to find your next favorite dish with BestAround
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -300,7 +300,7 @@ export default function Home() {
             className={`text-center mb-8 sm:mb-12 md:mb-16 scroll-animate ${featuresRef.isVisible ? 'animate' : ''}`}
           >
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 sm:mb-4">
-              Why Choose Best Around?
+              Why Choose BestAround?
             </h2>
             <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto px-4">
               We make it easy to discover and enjoy the best food experiences in your area

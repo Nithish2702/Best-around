@@ -174,17 +174,7 @@ export default function Privacy() {
             ]}
           />
 
-          <Section
-            icon={<Phone />}
-            title="11. Contact Us"
-            content={[`For questions about this Privacy Policy, contact us at:`]}
-            extra={
-              <div className="flex items-center space-x-3 mt-4 text-primary-600 font-medium">
-                <Mail className="h-5 w-5" />
-                <span>privacy@bestaround.in</span>
-                </div>
-            }
-          />
+
         </div>
       </section>
 

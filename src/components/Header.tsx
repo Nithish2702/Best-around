@@ -8,17 +8,44 @@ import { useRouter, usePathname } from 'next/navigation';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isClosing, setIsClosing] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+    setIsClosing(false);
   };
 
-  // Block background scroll when mobile menu is open
+  const closeMenu = () => {
+    setIsClosing(true);
+    setTimeout(() => {
+      setIsMenuOpen(false);
+      setIsClosing(false);
+    }, 300); // Match the animation duration
+  };
+
+  // Enable scroll when mobile menu is open and handle scroll to close
   useEffect(() => {
     if (isMenuOpen) {
-      document.body.style.overflow = 'hidden';
+      // Allow scrolling when menu is open
+      document.body.style.overflow = 'unset';
+      
+      // Add scroll event listener to close menu when user scrolls
+      const handleScroll = () => {
+        if (!isClosing) {
+          closeMenu();
+        }
+      };
+      
+      // Listen for scroll events on the window
+      window.addEventListener('scroll', handleScroll, { passive: true });
+      
+      // Cleanup function
+      return () => {
+        document.body.style.overflow = 'unset';
+        window.removeEventListener('scroll', handleScroll);
+      };
     } else {
       document.body.style.overflow = 'unset';
     }
@@ -115,13 +142,13 @@ export default function Header() {
             </div>
 
             {/* Mobile menu button */}
-            <div className="md:hidden relative z-[70]">
+            <div className={`md:hidden relative z-[70] transition-opacity duration-300 ${isMenuOpen ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
               <button
                 onClick={toggleMenu}
                 className="text-gray-700 hover:text-orange-500 focus:outline-none p-2"
                 aria-label="Toggle menu"
               >
-                {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+                <Menu className="h-6 w-6" />
               </button>
             </div>
           </div>
@@ -129,34 +156,66 @@ export default function Header() {
           {/* Mobile Navigation */}
           {isMenuOpen && (
             <>
-              {/* Background overlay */}
-              <div className="md:hidden fixed inset-0 bg-white z-50 animate-in fade-in duration-300"></div>
-              {/* Mobile menu content */}
-              <div className="md:hidden mt-4 pt-4 border-t border-gray-200 relative z-[60] bg-white animate-in slide-in-from-top-4 duration-300">
-                <nav className="flex flex-col space-y-3">
-                  <Link
-                    href="/about"
-                    className="text-gray-700 font-medium px-4 py-2 rounded-lg hover:bg-gray-50 animate-in slide-in-from-left-4 duration-300 delay-100"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    About Us
-                  </Link>
-                  <Link
-                    href="/support"
-                    className="text-gray-700 font-medium px-4 py-2 rounded-lg hover:bg-gray-50 animate-in slide-in-from-left-4 duration-300 delay-200"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    Support
-                  </Link>
-                  <div className="pt-2 space-y-2">
-                    <a href="#" target="_blank" rel="noopener noreferrer" className="block w-full bg-gradient-to-r from-orange-500 to-pink-500 text-white px-6 py-3 rounded-full font-medium text-center animate-in slide-in-from-left-4 duration-300 delay-300">
-                      Google Play
-                    </a>
-                    <a href="#" target="_blank" rel="noopener noreferrer" className="block w-full bg-gradient-to-r from-orange-500 to-pink-500 text-white px-6 py-3 rounded-full font-medium text-center animate-in slide-in-from-left-4 duration-300 delay-400">
-                      App Store
-                    </a>
+              {/* Background overlay - covers full screen but is transparent */}
+              <div 
+                className={`md:hidden fixed inset-0 bg-black/20 z-40 transition-opacity duration-300 ${isClosing ? 'opacity-0' : 'opacity-100'}`}
+                onClick={closeMenu}
+              ></div>
+              {/* Mobile menu content - full width, partial height overlay */}
+              <div className={`md:hidden fixed top-12 left-4 right-4 h-1/2 bg-white shadow-2xl z-50 transition-all duration-300 rounded-2xl ${isClosing ? 'transform -translate-y-full opacity-0' : 'transform translate-y-0 opacity-100'}`}>
+                <div className="flex flex-col h-full">
+                  {/* Header with close button */}
+                  <div className="flex items-center justify-between p-6 border-b border-gray-200">
+                    <h2 className="text-lg font-semibold text-gray-900">Menu</h2>
+                    <button
+                      onClick={closeMenu}
+                      className="text-gray-500 hover:text-gray-700 p-2"
+                      aria-label="Close menu"
+                    >
+                      <X className="h-6 w-6" />
+                    </button>
                   </div>
-                </nav>
+                  
+                  {/* Navigation content */}
+                  <div className="flex-1 p-6 overflow-y-auto">
+                    <nav className="flex flex-col space-y-4">
+                      <Link
+                        href="/about"
+                        className="text-gray-700 font-medium px-4 py-3 rounded-lg hover:bg-gray-50 transition-colors duration-200"
+                        onClick={closeMenu}
+                      >
+                        About Us
+                      </Link>
+                      <Link
+                        href="/support"
+                        className="text-gray-700 font-medium px-4 py-3 rounded-lg hover:bg-gray-50 transition-colors duration-200"
+                        onClick={closeMenu}
+                      >
+                        Support
+                      </Link>
+                    </nav>
+                    
+                    {/* App download buttons */}
+                    <div className="mt-8 space-y-3">
+                      <a 
+                        href="#" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="block w-full bg-gradient-to-r from-orange-500 to-pink-500 text-white px-6 py-3 rounded-full font-medium text-center hover:shadow-lg transition-all duration-300 transform hover:scale-105"
+                      >
+                        Google Play
+                      </a>
+                      <a 
+                        href="#" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="block w-full bg-gradient-to-r from-orange-500 to-pink-500 text-white px-6 py-3 rounded-full font-medium text-center hover:shadow-lg transition-all duration-300 transform hover:scale-105"
+                      >
+                        App Store
+                      </a>
+                    </div>
+                  </div>
+                </div>
               </div>
             </>
           )}
