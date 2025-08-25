@@ -388,15 +388,7 @@ export default function Support() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <motion.div
-              className="inline-flex items-center justify-center w-16 h-16 bg-primary-100 rounded-full mb-6"
-              initial={{ scale: 0, rotate: -180 }}
-              whileInView={{ scale: 1, rotate: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
-              <Mail className="h-8 w-8 text-primary-600" />
-            </motion.div>
+
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 sm:mb-4">
               Get in Touch
             </h2>
