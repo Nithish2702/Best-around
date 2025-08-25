@@ -15,6 +15,20 @@ export default function Header() {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  // Block background scroll when mobile menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    // Cleanup function to restore scroll when component unmounts
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMenuOpen]);
+
   // Handle scroll to section when navigating from other pages
   useEffect(() => {
     if (pathname === '/') {
@@ -52,10 +66,10 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-[9999] pt-4 bg-white">
+    <header className="sticky top-0 z-[99999] pt-4 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Navigation Bar */}
-        <div className="bg-white rounded-full shadow-lg border border-gray-100 px-6 py-2.5">
+        <div className="bg-white rounded-full shadow-lg border border-gray-100 px-6 py-2.5 relative z-50">
           <div className="flex items-center justify-between">
             {/* Logo and Brand */}
             <div className="flex items-center">
@@ -101,7 +115,7 @@ export default function Header() {
             </div>
 
             {/* Mobile menu button */}
-            <div className="md:hidden">
+            <div className="md:hidden relative z-[70]">
               <button
                 onClick={toggleMenu}
                 className="text-gray-700 hover:text-orange-500 focus:outline-none p-2"
@@ -114,32 +128,37 @@ export default function Header() {
 
           {/* Mobile Navigation */}
           {isMenuOpen && (
-                          <div className="md:hidden mt-4 pt-4 border-t border-gray-200">
+            <>
+              {/* Background overlay */}
+              <div className="md:hidden fixed inset-0 bg-white z-50 animate-in fade-in duration-300"></div>
+              {/* Mobile menu content */}
+              <div className="md:hidden mt-4 pt-4 border-t border-gray-200 relative z-[60] bg-white animate-in slide-in-from-top-4 duration-300">
                 <nav className="flex flex-col space-y-3">
                   <Link
                     href="/about"
-                    className="text-gray-700 font-medium px-4 py-2 rounded-lg hover:bg-gray-50"
+                    className="text-gray-700 font-medium px-4 py-2 rounded-lg hover:bg-gray-50 animate-in slide-in-from-left-4 duration-300 delay-100"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     About Us
                   </Link>
                   <Link
                     href="/support"
-                    className="text-gray-700 font-medium px-4 py-2 rounded-lg hover:bg-gray-50"
+                    className="text-gray-700 font-medium px-4 py-2 rounded-lg hover:bg-gray-50 animate-in slide-in-from-left-4 duration-300 delay-200"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     Support
                   </Link>
-                                 <div className="pt-2 space-y-2">
-                                                           <a href="#" target="_blank" rel="noopener noreferrer" className="block w-full bg-gradient-to-r from-orange-500 to-pink-500 text-white px-6 py-3 rounded-full font-medium text-center">
+                  <div className="pt-2 space-y-2">
+                    <a href="#" target="_blank" rel="noopener noreferrer" className="block w-full bg-gradient-to-r from-orange-500 to-pink-500 text-white px-6 py-3 rounded-full font-medium text-center animate-in slide-in-from-left-4 duration-300 delay-300">
                       Google Play
                     </a>
-                    <a href="#" target="_blank" rel="noopener noreferrer" className="block w-full bg-gradient-to-r from-orange-500 to-pink-500 text-white px-6 py-3 rounded-full font-medium text-center">
+                    <a href="#" target="_blank" rel="noopener noreferrer" className="block w-full bg-gradient-to-r from-orange-500 to-pink-500 text-white px-6 py-3 rounded-full font-medium text-center animate-in slide-in-from-left-4 duration-300 delay-400">
                       App Store
                     </a>
-                 </div>
-              </nav>
-            </div>
+                  </div>
+                </nav>
+              </div>
+            </>
           )}
         </div>
       </div>

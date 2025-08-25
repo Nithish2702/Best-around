@@ -53,8 +53,8 @@ export default function Footer() {
               />
             </div>
             
-            <p className="text-gray-300 mb-4 text-sm leading-relaxed max-w-lg -mt-8">
-              Discover exceptional dining experiences in your neighborhood. We connect food lovers with the finest restaurants, cafes, and local eateries through personalized recommendations and authentic reviews
+            <p className="text-gray-300 mb-4 text-sm leading-relaxed max-w-lg -mt-12">
+              Find the best dishes around you, rated by real foodies. Discover, review, and share authentic food experiences with BestAround.
             </p>
 
             {/* App Download */}

@@ -87,7 +87,7 @@ export default function About() {
                transition={{ duration: 0.8, delay: 0.6 }}
              >
                BestAround is a food discovery platform built for people who love great dishes and authentic 
-               dining experiences. Founded in 2025, we felt that most review apps simply rate restaurants as a 
+               dining experiences.we felt that most review apps simply rate restaurants as a 
                whole and miss what really matters: the dishes themselves and your personal taste. Whether 
                you&apos;re craving a classic butter chicken or looking for a new fusion dish, BestAround helps you 
                discover and enjoy the best dishes nearby.
@@ -137,8 +137,8 @@ export default function About() {
                    <div className="bg-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4 shadow-lg">
                      <Heart className="h-10 w-10 text-primary-600" />
                    </div>
-                   <h3 className="text-xl font-bold text-gray-900 mb-2">Food First</h3>
-                   <p className="text-gray-600">Where every dish tells a story</p>
+                   {/* <h3 className="text-xl font-bold text-gray-900 mb-2">Food First</h3> */}
+                   <p className="text-gray-600">Real reviews. Real food. Right choice. keep food first as it is</p>
                  </div>
                </div>
                
@@ -169,8 +169,7 @@ export default function About() {
                Our Values
              </h2>
              <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
-               These core principles guide everything we do and every decision we make as we work to build 
-               the best platform for connecting communities with local businesses.
+             These values guide how we help food lovers discover the best dishes, share authentic reviews, and build trust in every bite.
              </p>
            </motion.div>
            
@@ -222,7 +221,11 @@ export default function About() {
               <div className="bg-gradient-to-br from-primary-50 via-accent-50 to-primary-100 rounded-3xl p-12 border border-primary-200 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105">
                 <div className="text-center">
                   <div className="bg-white rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-8 shadow-lg">
-                    <Star className="h-12 w-12 text-primary-600" />
+                    <img 
+                      src="/BestAround - Primary Icon.png" 
+                      alt="BestAround Icon" 
+                      className="h-12 w-12 object-contain"
+                    />
                   </div>
                   <p className="text-gray-700 text-xl leading-relaxed max-w-4xl mx-auto">
                     BestAround connects you with the finest restaurants, cafés and street-food stalls through verified 
