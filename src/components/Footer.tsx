@@ -47,7 +47,7 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <div className="flex items-center -mt-14">
               <img 
-                src="/BestAround V2 - Primary Logo.png" 
+                src="/BestAround V2 - Light Logo.png" 
                 alt="Best Around Logo" 
                 className="h-48 w-48 object-contain"
               />
@@ -117,6 +117,8 @@ export default function Footer() {
                   <a
                     key={index}
                     href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     aria-label={social.label}
                     className="bg-gray-800/50 hover:bg-primary-600 text-gray-400 hover:text-white p-2 rounded-lg transition-all duration-300 hover:scale-110 hover:shadow-md border border-gray-700/50 hover:border-primary-500"
                   >
@@ -153,7 +155,7 @@ export default function Footer() {
         <div className="border-t border-gray-700/50 mt-6 pt-4">
           <div className="flex flex-col sm:flex-row justify-center items-center gap-3 text-center">
             <p className="text-gray-400 text-xs">
-              © {currentYear} Best Around. All rights reserved.
+              © {currentYear} BestAround. All rights reserved.
             </p>
             <div className="flex items-center space-x-1 text-xs text-gray-500">
               <span>Made with</span>

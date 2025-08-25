@@ -55,7 +55,7 @@ export default function Header() {
     <header className="sticky top-0 z-[9999] pt-4 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Navigation Bar */}
-        <div className="bg-white rounded-full shadow-lg border border-gray-100 px-6 py-3">
+        <div className="bg-white rounded-full shadow-lg border border-gray-100 px-6 py-2.5">
           <div className="flex items-center justify-between">
             {/* Logo and Brand */}
             <div className="flex items-center">
@@ -71,36 +71,33 @@ export default function Header() {
               </Link>
             </div>
 
-            {/* Desktop Navigation Links - Centered */}
-            <nav className="hidden md:flex items-center space-x-12 absolute left-1/2 transform -translate-x-1/2">
-              <button
-                onClick={() => handleNavigation('#how-it-works')}
-                className="text-gray-700 font-medium transition-colors hover:text-orange-500 cursor-pointer"
-              >
-                How it Works
-              </button>
-              <button
-                onClick={() => handleNavigation('#services')}
-                className="text-gray-700 font-medium transition-colors hover:text-orange-500 cursor-pointer"
-              >
-                Features
-              </button>
-              <Link
-                href="/support"
-                className="text-gray-700 font-medium transition-colors hover:text-orange-500"
-              >
-                Support
-              </Link>
-            </nav>
+            {/* Right Side Navigation and App Buttons */}
+            <div className="hidden md:flex items-center space-x-8">
+              {/* Desktop Navigation Links */}
+              <nav className="flex items-center space-x-8">
+                <Link
+                  href="/about"
+                  className="text-gray-700 font-medium transition-colors hover:text-orange-500"
+                >
+                  About Us
+                </Link>
+                <Link
+                  href="/support"
+                  className="text-gray-700 font-medium transition-colors hover:text-orange-500"
+                >
+                  Support
+                </Link>
+              </nav>
 
-            {/* Get App Buttons */}
-            <div className="hidden md:flex items-center space-x-3">
-              <a href="#" target="_blank" rel="noopener noreferrer" className="inline-block bg-gradient-to-r from-orange-500 to-pink-500 text-white px-4 py-2 rounded-full font-medium hover:shadow-lg transition-all duration-300 transform hover:scale-105 text-sm text-center">
-                Google Play
-              </a>
-              <a href="#" target="_blank" rel="noopener noreferrer" className="inline-block bg-gradient-to-r from-orange-500 to-pink-500 text-white px-4 py-2 rounded-full font-medium hover:shadow-lg transition-all duration-300 transform hover:scale-105 text-sm text-center">
-                App Store
-              </a>
+              {/* Get App Buttons */}
+              <div className="flex items-center space-x-3">
+                <a href="#" target="_blank" rel="noopener noreferrer" className="inline-block bg-gradient-to-r from-orange-500 to-pink-500 text-white px-4 py-2 rounded-full font-medium hover:shadow-lg transition-all duration-300 transform hover:scale-105 text-sm text-center">
+                  Google Play
+                </a>
+                <a href="#" target="_blank" rel="noopener noreferrer" className="inline-block bg-gradient-to-r from-orange-500 to-pink-500 text-white px-4 py-2 rounded-full font-medium hover:shadow-lg transition-all duration-300 transform hover:scale-105 text-sm text-center">
+                  App Store
+                </a>
+              </div>
             </div>
 
             {/* Mobile menu button */}
@@ -119,25 +116,20 @@ export default function Header() {
           {isMenuOpen && (
                           <div className="md:hidden mt-4 pt-4 border-t border-gray-200">
                 <nav className="flex flex-col space-y-3">
-                  <button
-                    onClick={() => handleNavigation('#how-it-works')}
-                    className="text-gray-700 font-medium px-4 py-2 rounded-lg hover:bg-gray-50 text-left"
+                  <Link
+                    href="/about"
+                    className="text-gray-700 font-medium px-4 py-2 rounded-lg hover:bg-gray-50"
+                    onClick={() => setIsMenuOpen(false)}
                   >
-                    How it Works
-                  </button>
-                <button
-                  onClick={() => handleNavigation('#services')}
-                  className="text-gray-700 font-medium px-4 py-2 rounded-lg hover:bg-gray-50 text-left"
-                >
-                  Features
-                </button>
-                <Link
-                  href="/support"
-                  className="text-gray-700 font-medium px-4 py-2 rounded-lg hover:bg-gray-50"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Support
-                </Link>
+                    About Us
+                  </Link>
+                  <Link
+                    href="/support"
+                    className="text-gray-700 font-medium px-4 py-2 rounded-lg hover:bg-gray-50"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Support
+                  </Link>
                                  <div className="pt-2 space-y-2">
                                                            <a href="#" target="_blank" rel="noopener noreferrer" className="block w-full bg-gradient-to-r from-orange-500 to-pink-500 text-white px-6 py-3 rounded-full font-medium text-center">
                       Google Play

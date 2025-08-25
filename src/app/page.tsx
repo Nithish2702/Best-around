@@ -164,19 +164,25 @@ export default function Home() {
 
   const testimonials = [
     {
+      name: "Priya Sharma",
+      photo: "https://i.pravatar.cc/150?img=1",
       location: "Mumbai, India",
-      text: "Best Around helped me find the perfect Italian restaurant for my anniversary dinner. The pasta was incredible and the ambiance was exactly what we wanted!",
+      text: "Found the best butter chicken near my office! The gravy is so rich and creamy, just like my mom makes. BestAround really knows what's good!",
       rating: 5
     },
     {
+      name: "Rahul Verma",
+      photo: "https://i.pravatar.cc/150?img=2",
       location: "Delhi, India", 
-      text: "I discovered my new favorite taco truck through Best Around! The location-based recommendations are spot-on and saved me from another boring lunch.",
+      text: "Discovered an amazing chole bhature stall in Chandni Chowk! The bhature were so fluffy and the chole had perfect spice. My friends were impressed!",
       rating: 5
     },
     {
+      name: "Anjali Patel",
+      photo: "https://i.pravatar.cc/150?img=3",
       location: "Bangalore, India",
-      text: "As a foodie who just moved to Bangalore, Best Around made it so easy to explore the local food scene. I've found amazing hidden gems I never would have discovered otherwise!",
-      rating: 5
+      text: "Just moved to Bangalore and BestAround found me the most authentic dosas! The coconut chutney is to die for. No more tourist traps!",
+      rating: 4
     }
   ];
 
@@ -197,7 +203,7 @@ export default function Home() {
             className={`text-center mb-16 sm:mb-20 scroll-animate ${howItWorksRef.isVisible ? 'animate' : ''}`}
           >
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              How BestAround Works
+              How Best Around Works
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Discover amazing dishes in just a few simple steps
@@ -223,7 +229,7 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
               </div>
               <p className="text-center text-gray-600 mt-4 text-sm">
-                Watch how easy it is to find your next favorite dish with BestAround
+                Watch how easy it is to find your next favorite dish with Best Around
               </p>
             </div>
           </div>
@@ -238,7 +244,7 @@ export default function Home() {
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-4">Download & Sign Up</h3>
               <p className="text-gray-600 leading-relaxed">
-                Get the free BestAround app from your app store and create your foodie profile in seconds
+                Get the free Best Around app from your app store and create your foodie profile in seconds
               </p>
             </div>
 
@@ -326,27 +332,49 @@ export default function Home() {
               What Food Lovers Say
             </h2>
             <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto px-4">
-              Join thousands of satisfied food enthusiasts who discovered their new favorite restaurants
+            Join thousands of satisfied food lovers, who discovered their new dishes everytime
             </p>
           </div>
           
-          <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 scroll-animate-stagger ${testimonialsRef.isVisible ? 'animate' : ''}`}>
+          <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 scroll-animate-stagger ${testimonialsRef.isVisible ? 'animate' : ''}`}>
             {testimonials.map((testimonial, index) => (
-                              <div key={index} className="relative bg-white rounded-xl shadow-md p-6 sm:p-8 hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 group cursor-pointer">
+              <div key={index} className="relative bg-white rounded-xl shadow-md p-6 sm:p-8 hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 group cursor-pointer">
                 <div className="flex mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300">
                   {[...Array(testimonial.rating)].map((_, i) => (
                     <Star key={i} className="h-4 w-4 sm:h-5 sm:w-5 text-yellow-400 fill-current group-hover:animate-pulse" style={{animationDelay: `${i * 0.1}s`}} />
                   ))}
                 </div>
-                <p className="text-sm sm:text-base text-gray-700 mb-4 sm:mb-6 italic leading-relaxed group-hover:text-gray-900 transition-colors duration-300 relative">
-                  <span className="text-4xl text-primary-200 absolute -top-2 -left-2 group-hover:text-primary-300 transition-colors duration-300">&ldquo;</span>
+                <p className="text-sm sm:text-base text-gray-700 mb-4 sm:mb-6 italic leading-relaxed group-hover:text-gray-900 transition-colors duration-300">
                   {testimonial.text}
-                  <span className="text-4xl text-primary-200 absolute -bottom-6 -right-2 group-hover:text-primary-300 transition-colors duration-300">&rdquo;</span>
                 </p>
-                <div className="relative z-10">
-                  <div className="text-gray-600 text-xs sm:text-sm group-hover:text-primary-500 transition-colors duration-300 flex items-center">
-                    <MapPin className="h-3 w-3 mr-1 opacity-60" />
-                    {testimonial.location}
+                
+                {/* Customer Info */}
+                <div className="relative z-10 flex items-center justify-between">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-10 h-10 rounded-full border-2 border-primary-100 group-hover:border-primary-300 transition-colors duration-300 overflow-hidden bg-gray-100 flex items-center justify-center">
+                      <img 
+                        src={testimonial.photo} 
+                        alt={testimonial.name}
+                        className="w-full h-full object-cover"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          target.style.display = 'none';
+                          target.nextElementSibling?.classList.remove('hidden');
+                        }}
+                      />
+                      <div className="hidden w-full h-full bg-gradient-to-br from-primary-400 to-primary-600 flex items-center justify-center text-white text-xs font-semibold">
+                        {testimonial.name.split(' ').map(n => n[0]).join('')}
+                      </div>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900 text-sm group-hover:text-primary-600 transition-colors duration-300">
+                        {testimonial.name}
+                      </h4>
+                      <div className="text-gray-600 text-xs group-hover:text-primary-500 transition-colors duration-300 flex items-center">
+                        <MapPin className="h-3 w-3 mr-1 opacity-60" />
+                        {testimonial.location}
+                      </div>
+                    </div>
                   </div>
                 </div>
                 

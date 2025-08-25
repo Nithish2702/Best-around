@@ -52,7 +52,7 @@ const FoodSuggestionHero = ({ foodItems }: { foodItems: any[] }) => {
       <div className="absolute top-40 right-20 w-96 h-96 bg-gradient-to-r from-pink-200 to-orange-200 rounded-full blur-3xl opacity-20"></div>
       
       <motion.div
-        className="container mx-auto px-6 pt-40 relative z-0"
+        className="container mx-auto px-6 pt-28 relative z-0"
         variants={containerVariants}
         initial="hidden"
         animate="visible"

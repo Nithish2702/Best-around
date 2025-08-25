@@ -10,7 +10,7 @@ export default function Support() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    subject: '',
+    phone: '',
     category: '',
     message: ''
   });
@@ -48,7 +48,7 @@ export default function Support() {
         setFormData({
           name: '',
           email: '',
-          subject: '',
+          phone: '',
           category: '',
           message: ''
         });
@@ -73,7 +73,7 @@ export default function Support() {
       title: "Email Support",
       description: "Send us a detailed message and we'll get back to you promptly",
       contact: "support@bestaround.in",
-      hours: "Response within 24 hours"
+      // hours: "Response within 24 hours"
     }
   ];
 
@@ -230,17 +230,18 @@ export default function Support() {
                   </select>
                 </div>
                 <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
-                    Subject *
+                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                    Phone Number *
                   </label>
                   <input
-                    type="text"
-                    id="subject"
-                    name="subject"
+                    type="tel"
+                    id="phone"
+                    name="phone"
                     required
-                    value={formData.subject}
+                    value={formData.phone}
                     onChange={handleInputChange}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 text-gray-900 bg-white"
+                    placeholder="Enter your phone number"
                   />
                 </div>
               </div>
@@ -426,12 +427,8 @@ export default function Support() {
                 <Mail className="h-10 w-10" />
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-3">Email Support</h3>
-              <p className="text-lg text-gray-600 mb-4 leading-relaxed">Send us a detailed message and we&apos;ll get back to you promptly</p>
+              <p className="text-lg text-gray-600 mb-4 leading-relaxed">Send us an email and we'll get back to you promptly</p>
               <div className="font-bold text-primary-600 mb-3 text-lg">{contactMethods[0].contact}</div>
-              <div className="flex items-center justify-center text-gray-500">
-                <Clock className="h-5 w-5 mr-3" />
-                <span className="text-base">{contactMethods[0].hours}</span>
-              </div>
             </motion.div>
           </motion.div>
         </div>
