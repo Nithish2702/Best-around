@@ -18,24 +18,18 @@ export default function Header() {
   };
 
   const closeMenu = () => {
-    setIsClosing(true);
-    setTimeout(() => {
-      setIsMenuOpen(false);
-      setIsClosing(false);
-    }, 300); // Match the animation duration
+    setIsMenuOpen(false);
   };
 
-  // Enable scroll when mobile menu is open and handle scroll to close
+  // Disable scroll when mobile menu is open and handle scroll to close
   useEffect(() => {
     if (isMenuOpen) {
-      // Allow scrolling when menu is open
-      document.body.style.overflow = 'unset';
+      // Block scrolling when menu is open
+      document.body.style.overflow = 'hidden';
       
       // Add scroll event listener to close menu when user scrolls
       const handleScroll = () => {
-        if (!isClosing) {
-          closeMenu();
-        }
+        closeMenu();
       };
       
       // Listen for scroll events on the window
@@ -158,11 +152,11 @@ export default function Header() {
             <>
               {/* Background overlay - covers full screen but is transparent */}
               <div 
-                className={`md:hidden fixed inset-0 bg-black/20 z-40 transition-opacity duration-300 ${isClosing ? 'opacity-0' : 'opacity-100'}`}
+                className="md:hidden fixed inset-0 bg-black/20 z-40 animate-in fade-in duration-300"
                 onClick={closeMenu}
               ></div>
-              {/* Mobile menu content - full width, partial height overlay */}
-              <div className={`md:hidden fixed top-12 left-4 right-4 h-1/2 bg-white shadow-2xl z-50 transition-all duration-300 rounded-2xl ${isClosing ? 'transform -translate-y-full opacity-0' : 'transform translate-y-0 opacity-100'}`}>
+              {/* Mobile menu content - full screen overlay */}
+              <div className="md:hidden fixed inset-0 bg-white z-50 animate-in slide-in-from-top duration-300">
                 <div className="flex flex-col h-full">
                   {/* Header with close button */}
                   <div className="flex items-center justify-between p-6 border-b border-gray-200">
