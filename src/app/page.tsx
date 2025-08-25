@@ -188,6 +188,8 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-white">
+      {/* Top gradient element */}
+      <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-orange-100 via-pink-50 to-transparent z-0"></div>
       <Header />
       
       {/* Hero Section */}
