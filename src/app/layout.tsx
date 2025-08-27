@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'BestAround - Reviews and Recommendations',
-  description: 'Find the best restaurants, cafes, food trucks, and local eateries in your area. Get personalized food recommendations based on your location, taste preferences, and dietary needs.',
+  description: 'Find the best dishes around you, rated by real foodies. Discover, review, and share authentic food experiences with BestAround.',
   keywords: 'restaurants, food delivery, local food, dining, cafes, food recommendations, cuisine, takeout, food near me',
   authors: [{ name: 'Best Around Team' }],
   icons: {
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'BestAround - Reviews and Recommendations',
-    description: 'Find the best restaurants, cafes, and local eateries in your area with personalized food recommendations.',
+    description: 'Find the best dishes around you, rated by real foodies. Discover, review, and share authentic food experiences with BestAround.',
     type: 'website',
   },
 }
