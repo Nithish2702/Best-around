@@ -6,13 +6,6 @@
       "**/.*",
       "**/node_modules/**"
     ],
-    "redirects": [
-      {
-        "source": "/",
-        "destination": "/index.html",
-        "type": 200
-      }
-    ],
     "rewrites": [
       {
         "source": "**",
