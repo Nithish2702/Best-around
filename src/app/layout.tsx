@@ -5,6 +5,7 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.bestaround.in'),
   title: 'BestAround - Reviews and Recommendations',
   description: 'Find the best dishes around you, rated by real foodies. Discover, review, and share authentic food experiences with BestAround.',
   keywords: 'restaurants, food delivery, local food, dining, cafes, food recommendations, cuisine, takeout, food near me',
@@ -18,6 +19,7 @@ export const metadata: Metadata = {
     title: 'BestAround - Reviews and Recommendations',
     description: 'Find the best dishes around you, rated by real foodies. Discover, review, and share authentic food experiences with BestAround.',
     type: 'website',
+    url: 'https://www.bestaround.in',
   },
 }
 
