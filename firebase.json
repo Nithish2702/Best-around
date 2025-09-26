@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "target": "bestaround-in",
+    "site": "best-around-website",
     "public": "out",
     "ignore": [
       "firebase.json",
