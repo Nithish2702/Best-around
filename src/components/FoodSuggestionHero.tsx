@@ -46,13 +46,13 @@ const FoodSuggestionHero = ({ foodItems }: { foodItems: any[] }) => {
   };
 
   return (
-    <div className="min-h-[87vh] bg-white relative overflow-hidden">
+    <div className="min-h-[75vh] md:min-h-[87vh] bg-white relative overflow-hidden">
       {/* Background gradient elements */}
       <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-orange-200 to-pink-200 rounded-full blur-3xl opacity-30"></div>
       <div className="absolute top-40 right-20 w-96 h-96 bg-gradient-to-r from-pink-200 to-orange-200 rounded-full blur-3xl opacity-20"></div>
       
       <motion.div
-        className="container mx-auto px-6 pt-28 relative z-0"
+        className="container mx-auto px-6 pt-24 sm:pt-28 relative z-0"
         variants={containerVariants}
         initial="hidden"
         animate="visible"

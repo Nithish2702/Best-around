@@ -1,5 +1,15 @@
 {
   "projects": {
     "default": "best-around-website"
-  }
+  },
+  "targets": {
+    "best-around-website": {
+      "hosting": {
+        "bestaround-in": [
+          "bestaround-in"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }
